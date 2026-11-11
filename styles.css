@@ -22,7 +22,7 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; }
 ::selection { color: var(--bg); background: var(--accent); }
 .section-wrap { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
-.mono, .eyebrow, .brand-label, .project-meta, .visual-index, .visual-caption, .credential-type, .footer-year, .back-top, .contact-hint { font-family: var(--mono); }
+.mono, .eyebrow, .brand-label, .project-meta, .visual-index, .visual-caption, .credential-type, .footer-year, .back-top { font-family: var(--mono); }
 .skip-link { position: fixed; z-index: 20; top: 10px; left: 10px; padding: 10px 14px; transform: translateY(-160%); background: var(--accent); color: var(--bg); }
 .skip-link:focus { transform: translateY(0); }
 .site-header { width: min(1280px, calc(100% - 64px)); height: 88px; margin: auto; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
@@ -147,7 +147,10 @@ h1, h2, h3, p { margin-top: 0; }
 .contact-inner h2 { margin: 21px 0 16px; font-size: clamp(40px, 5vw, 62px); }
 .contact-inner > p:not(.eyebrow) { max-width: 430px; margin-bottom: 23px; color: var(--muted); font-size: 12px; line-height: 1.8; }
 .contact-socials { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
-.contact-hint { display: block; margin-top: 12px; color: var(--faint); font-size: 8px; }
+.contact-details { width: fit-content; margin: 20px 0; display: grid; gap: 12px; }
+.contact-details a { display: flex; flex-wrap: wrap; gap: 14px; color: var(--ink); font-size: 11px; }
+.contact-details a:hover { color: var(--accent); }
+.contact-details .mono { min-width: 42px; color: var(--accent-dim); font-size: 8px; letter-spacing: .8px; }
 .contact-decoration { position: absolute; right: max(4%, calc((100% - 1120px) / 2)); bottom: -34px; color: rgba(193, 251, 114, .035); font: 700 clamp(80px, 14vw, 190px)/.74 var(--display); letter-spacing: -14px; text-align: right; }
 .contact-decoration span { color: rgba(193, 251, 114, .18); }
 .site-footer { min-height: 100px; display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 16px; color: var(--faint); font-size: 9px; }
@@ -169,8 +172,6 @@ h1, h2, h3, p { margin-top: 0; }
 .project-dialog ul { padding-left: 18px; color: var(--muted); font-size: 11px; line-height: 2; }
 .project-dialog .dialog-scope { margin: 25px 0 0; padding: 13px; border-left: 2px solid var(--accent); background: rgba(193, 251, 114, .05); font-size: 10px !important; }
 .dialog-scope strong { color: var(--ink); }
-.toast { position: fixed; z-index: 10; right: 22px; bottom: 22px; max-width: min(380px, calc(100% - 44px)); padding: 13px 17px; border: 1px solid var(--line); background: var(--surface-raised); color: var(--ink); font-size: 11px; opacity: 0; pointer-events: none; transform: translateY(8px); transition: .2s; }
-.toast.is-visible { opacity: 1; transform: translateY(0); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 @media (max-width: 820px) {

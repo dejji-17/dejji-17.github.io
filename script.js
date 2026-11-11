@@ -48,8 +48,6 @@ const projects = {
 const filters = document.querySelectorAll(".filter-button");
 const projectCards = document.querySelectorAll(".project-card");
 const dialog = document.querySelector(".project-dialog");
-const toast = document.querySelector(".toast");
-let toastTimer;
 
 filters.forEach((button) => {
   button.addEventListener("click", () => {
@@ -103,21 +101,5 @@ navigation.querySelectorAll("a").forEach((link) => {
     navigation.classList.remove("is-open");
   });
 });
-
-const contactLink = document.querySelector('.contact-inner .button');
-contactLink.addEventListener("click", (event) => {
-  const recipient = contactLink.getAttribute("href").slice("mailto:".length).split("?")[0];
-  if (!recipient) {
-    event.preventDefault();
-    showToast("Add your email address to this link in index.html before publishing.");
-  }
-});
-
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add("is-visible");
-  window.clearTimeout(toastTimer);
-  toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 3800);
-}
 
 document.querySelector("#year").textContent = new Date().getFullYear();
